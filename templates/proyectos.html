@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Voz Ñawi</title>
+    <link rel="icon" type="image/png" href="../static/res/favicon-negro.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="../static/res/favicon-blanco.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/pages.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="main-page-padding"> 
+        <section id="galeria-header" class="section-padding-bottom">
+            <h1 class="reveal page-title">Nuestros Proyectos</h1>
+            <p class="reveal page-subtitle">Un recorrido por las historias que hemos visibilizado.</p>
+        </section>
+
+        <section id="proyecto-chispa" class="project-detailed-section">
+            <div class="proyecto-container">
+                
+                <img src="../static/res/BomberosLogo.png" alt="Logo Bomberos Carabayllo 164" class="bomberos-logo reveal">
+
+                <h2 class="reveal project-main-title">Chispa de Humanidad</h2>
+                
+                <div class="reveal project-description">
+                    <p>Este documental retrata la vida diaria de los bomberos voluntarios de la Compañía 164 de Carabayllo, mostrando su entrega en un trabajo sin sueldo, lleno de riesgos, sacrificios y esfuerzo constante. A través de un acercamiento íntimo, observamos cómo estos hombres y mujeres equilibran su vida personal con una vocación que los impulsa a servir a su comunidad sin esperar nada a cambio.</p>
+                </div>
+
+                <div class="destacado-video-wrapper reveal video-centered-gallery">
+                    <iframe src="https://www.youtube.com/embed/sGxMZofxzhw?rel=0&modestbranding=1" title="Documental Chispa de Humanidad" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+
+                <h4 class="reveal gallery-section-title">Detrás de cámaras</h4>
+                
+                <div class="galeria-grid reveal">
+                    <img src="/static/res/Acti1.png" alt="Detrás de cámaras 1">
+                    <img src="/static/res/Acti2.png" alt="Detrás de cámaras 2">
+                    <img src="/static/res/Acti3.png" alt="Detrás de cámaras 3">
+                    <img src="/static/res/Acti4.png" alt="Detrás de cámaras 1">
+                    <img src="/static/res/Acti5.png" alt="Detrás de cámaras 2">
+                    <img src="/static/res/Acti6.png" alt="Detrás de cámaras 3">
+                    <img src="/static/res/Acti7.png" alt="Detrás de cámaras 3">                   
+                    <img src="/static/res/Acti8.png" alt="Detrás de cámaras 3">                   
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <div id="image-modal" class="modal-lightbox">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Imagen ampliada">
+    </div>
+
+    <script src="../static/js/script.js"></script>
+    <script>
+        function loadHTML(elementId, fileName) {
+            return fetch(fileName) // <-- Es vital agregar este 'return'
+                .then(response => {
+                    if (response.ok) return response.text();
+                    throw new Error('Error al cargar ' + fileName);
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error(error));
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            loadHTML('header-placeholder', 'componentes/header.html').then(() => {
+                if (typeof inicializarMenu === 'function') {
+                    inicializarMenu();
+                }
+            });
+            
+            loadHTML('footer-placeholder', 'componentes/footer.html');
+        });
+    </script>
+</body>
+</html>
