@@ -24,10 +24,11 @@ La arquitectura del proyecto está diseñada para ser modular y escalable:
 ```text
 /
 ├── index.html                # Página principal (Inicio, Nosotros, Destacado, Equipo)
-├── proyectos.html            # Página secundaria (Galería de trabajos)
-├── componentes/              # Módulos inyectables
-│   ├── header.html
-│   └── footer.html
+├── templates/                # Archivos secundarios y módulos
+│   ├── proyectos.html        # Página secundaria (Galería de trabajos)
+│   └── componentes/          # Módulos inyectables
+│       ├── header.html
+│       └── footer.html
 └── static/                   # Recursos estáticos
     ├── css/
     │   ├── style.css         # Estilos globales y de la página principal
