@@ -683,11 +683,11 @@ footer {
     transform: scale(1.1) translateX(5px);
 }
 
-/* --- COPYRIGHT Y FIRMA DEL DESARROLLADOR --- */
+/* --- COPYRIGHT --- */
 .footer-bottom {
     width: 100%;
     display: flex;
-    justify-content: space-between; 
+    justify-content: center;
     align-items: center;
     padding-top: 25px;
     margin-top: 50px;
@@ -695,40 +695,9 @@ footer {
     font-size: 0.9rem;
 }
 
-.footer-developer {
-    color: var(--text-secondary);
-    margin-bottom: 0;
-    font-size: 0.85rem;
-}
-
-.footer-developer a {
-    color: var(--accent);
-    font-weight: 600;
-    transition: var(--transition-smooth);
-    position: relative;
-}
-
-.footer-developer a:hover {
-    color: var(--hover-accent);
-}
-
-.footer-developer a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--accent);
-    transition: var(--transition-smooth);
-}
-
-.footer-developer a:hover::after {
-    width: 100%;
-}
-
 .footer-copyright {
     color: var(--text-main);
+    text-align: center;
 }
 
 .footer-copyright span {
